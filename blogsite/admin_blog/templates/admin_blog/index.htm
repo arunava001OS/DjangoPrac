@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Admin-Blog Homepage</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <body>
+        {% if all_posts%}
+            {%for posts in all_posts%}
+            <div class="posts">
+                    <div class="title">
+                            <h3>{{posts.title}}</h3><br>          
+                            <!-- variables within {{}} -->
+                    </div>
+                    <div class="content">
+                            <p>{{posts.content}}</p><br>
+                    </div>
+                    <div class="date">
+                            <h5>Date created : {{posts.date}}</h5>
+                    </div>
+            </div>
+            
+            {%endfor %}
+        {%else%}
+            <h1>No Posts Yet !!!!!!!!!!!!!!!</h1>
+        {%endif %}
+    </body>
+</html>
